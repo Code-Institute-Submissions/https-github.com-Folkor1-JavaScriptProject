@@ -1,34 +1,11 @@
+let quizButtons = document.getElementsByClassName("quiz-but");
+let quizQuestion = document.getElementById("question-div");
 let okButton = document.getElementById("ok-div");
 let errorMessage = document.getElementById("error-message-div");
 let nameHeading = document.getElementById("name-div");
 let input = document.getElementById("name-input");
 let start = document.getElementById("start-button");
 let quizGame = document.getElementById("quiz-div");
-
-/* validates the input field and starts the quiz*/
-
-function inputStart() {
-    if (input.value.match(/^[0-9A-Za-z]+$/) !== null) {
-        input.style.display = "none";
-        start.style.display = "none";
-        nameHeading.style.display = "none";
-        quizGame.style.display = "block";
-    } else {
-        input.style.display = "none";
-        start.style.display = "none";
-        nameHeading.style.display = "none";
-        errorMessage.style.display = "block";
-    }
-}
-
-/* removes error message */
-
-okButton.onclick = function() {
-    errorMessage.style.display = "none";
-    input.style.display = "initial";
-    start.style.display = "initial";
-    nameHeading.style.display = "block";
-}
 
 let questions = 
     [
@@ -99,5 +76,42 @@ let incorrectAnswers = [
     "29 Incorrect",
     "30 Incorrect"
 ]
+
+let inputV = [];
+
+/* validates the input field and starts the quiz*/
+
+function inputStart() {
+    if (input.value.match(/^[0-9A-Za-z]+$/) !== null) {
+        input.style.display = "none";
+        start.style.display = "none";
+        nameHeading.style.display = "none";
+        quizGame.style.display = "block";
+        inputV.push(input.value);
+        getQuestion();
+    } else {
+        input.style.display = "none";
+        start.style.display = "none";
+        nameHeading.style.display = "none";
+        errorMessage.style.display = "block";
+    }
+}
+
+/* removes error message */
+
+okButton.onclick = function() {
+    errorMessage.style.display = "none";
+    input.style.display = "initial";
+    start.style.display = "initial";
+    nameHeading.style.display = "block";
+}
+
+/* gets random question and correct answer, then calls other function for incorrect answers */
+
+function getQuestion() {
+    quizQuestion.innerText = questions[0];
+    quizButtons[Math.floor(Math.random() * 4)].innerText = correctAnswers[0];
+    getIncorrectAnswers();
+}
 
 start.addEventListener('click', inputStart);
