@@ -1,3 +1,8 @@
+let leaderBoard = document.getElementById("leaderboard-wrap");
+let leaderBoardScore = document.getElementById("score-span");
+let leaderBoardButton = document.getElementById("leaderboard-button");
+let leaderBoardName = document.getElementById("name-span");
+let gameScore = document.getElementById("game-score");
 let resultsHeading = document.getElementById("results-heading");
 let resultsButtons = document.getElementById("results-buttons");
 let button1 = document.getElementById("button1");
@@ -244,6 +249,17 @@ function endGame() {
         resultsButtons.style.display = "block";
         gameScore.innerText = parseInt(scoreBar[0].innerText);
     }
+}
+
+/* gets leaderboard screen */
+
+leaderBoardButton.onclick = function() {
+
+    leaderBoard.style.display = "block";
+    resultsHeading.style.display = "none";
+    resultsButtons.style.display = "none";
+    leaderBoardName.innerText = inputV[0];
+    leaderBoardScore.innerText = gameScore.innerText;
 }
 
 for (let i = 0; i < 4; i++) {
