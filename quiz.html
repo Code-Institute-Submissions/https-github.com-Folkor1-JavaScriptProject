@@ -10,32 +10,32 @@
 <body>
 
     <!-- name input -->
-    <div></div>
-    <div>
-    <input>
+    <div id="name-div">Please enter your name:</div>
+    <div class="buttons-div">
+    <input type="text" id="name-input" maxlength="10" placeholder="Name">
 </div>
-    <div>
-    <button></button>
+    <div class="buttons-div">
+    <button id="start-button" class="main-nav">Start!</button>
 </div>
 
     <!-- error message -->
-    <div>
+    <div id="error-message-div" style="display:none"> <i class="fa-solid fa-circle-exclamation"></i> Please enter your name in Alphanumeric
         <br>
-        <button></button>
+        <button id="ok-div">OK</button>
     </div>
 
     <!-- quiz game -->
-<div>
-    <div><span>0</span></div>
-        <div><span>1</span> / 15</div>
+<div id="quiz-div" style="display:none">
+    <div id="score-div">Score: <span>0</span></div>
+        <div id="progress-div">Progress: <span id="progress-span">1</span> / 15</div>
         <br>
-        <div></div>
-        <div>
-        <button><span></span></button>
-        <button><span></span></button>
+        <div id="question-div">Question</div>
+        <div id="quiz-buttons">
+        <button class="main-nav quiz-but" id="button1"><span></span></button>
+        <button class="main-nav quiz-but" id="button2"><span></span></button>
         <br>
-        <button><span></span></button>
-        <button><span></span></button>
+        <button class="main-nav quiz-but" id="button3"><span></span></button>
+        <button class="main-nav quiz-but" id="button4"><span></span></button>
     </div>
     </div>
 
