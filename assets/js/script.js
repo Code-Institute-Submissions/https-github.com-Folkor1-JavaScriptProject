@@ -1,3 +1,4 @@
+let progressBar = document.getElementById("progress-span");
 let quizButtons = document.getElementsByClassName("quiz-but");
 let quizQuestion = document.getElementById("question-div");
 let okButton = document.getElementById("ok-div");
@@ -189,7 +190,12 @@ function pressButton() {
         quizButtons[Math.floor(Math.random() * 4)].innerText = correctAnswers[i];
 }
 
-/* */
+/* increments progress */
+
+function progress() {
+    let progress = parseInt(progressBar.innerText);
+    progressBar.innerText = ++progress;
+}
 
 
 for (let i = 0; i < 4; i++) {
