@@ -229,3 +229,30 @@ input:-webkit-autofill:active {
     font-size: 50px;
     color: #cfd6db;
 }
+
+/* For larger to medium screens size from 1200px wide and down */
+@media screen and (max-width: 1200px) {
+    #quiz-heading {
+        font-size: 50px;
+    }
+
+    #rules-tab {
+        width: 700px;
+        height: 450px;
+        font-size: 50px;
+    }
+
+    #score-div {
+        font-size: 80px;
+        margin-left: 20px;
+    }
+
+    #progress-div {
+        font-size: 80px;
+        margin-right: 20px;
+    }
+
+    #question-div {
+        font-size: 100px;
+    }
+}
