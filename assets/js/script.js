@@ -114,4 +114,15 @@ function getQuestion() {
     getIncorrectAnswers();
 }
 
+/* gets incorrect answers */
+
+function getIncorrectAnswers() {
+    for (let i = 0; i < 4; i++) {
+        if (quizButtons[i].innerText === "") {
+            quizButtons[i].innerText = incorrectAnswers[Math.floor(Math.random() * incorrectAnswers.length)];
+        }
+        random();
+    }      
+}
+
 start.addEventListener('click', inputStart);
