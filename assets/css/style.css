@@ -346,3 +346,80 @@ input:-webkit-autofill:active {
         width: 400px;
     }
 }
+
+/* For small screens size from 440px to 320px */
+@media screen and (max-width: 440px) {
+    #quiz-heading {
+        padding: 0 20px 0 20px;
+        }
+
+        #error-message-div {
+            width: 250px;
+            height: 140px;
+            font-size: 30px;
+        }
+
+        #ok-div {
+            width: 50px;
+            height: 30px;
+            font-size: 30px;
+        }
+
+        #ok-div:hover {
+            width: 55px;
+            height: 35px;
+            font-size: 30px;
+        }
+    
+    .main-nav {
+        width: 250px;
+        height: 80px;
+        font-size: 40px;
+    }
+
+    .main-nav:hover {
+        width: 270px;
+        height: 85px;
+    }
+
+    #rules-button {
+        font-size: 35px;
+    }
+
+    #rules-tab {
+        width: 250px;
+        height: 550px;
+        font-size: 40px;
+    }
+
+    #name-div {
+        font-size: 40px;
+        width: 310px;
+        height: 45px;
+    }
+
+    #question-div {
+        margin: 10px 0 10px 0;
+        padding: 50px 0 50px 0;
+        font-size: 40px;
+    }
+
+    #results-heading {
+        font-size: 50px;
+        height: 140px;
+    }
+
+    #leaderboard-div {
+        width: 280px;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    #name-span {
+        width: 170px;
+        height: 300px;
+        overflow-wrap: break-word;
+    }
+}
