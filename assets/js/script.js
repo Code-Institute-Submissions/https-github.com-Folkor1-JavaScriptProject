@@ -166,4 +166,20 @@ function random() {
     }
  }
 
+ /* gets new question(ordered) and answers(random allocation) */
+
+ function change() {
+    let i = +parseInt(progressBar.innerText);
+    quizQuestion.innerText = questions[i];
+    for (let y = 0; y < 4; y++) {
+            quizButtons[y].innerText = incorrectAnswers[Math.floor(Math.random() * incorrectAnswers.length)];
+        }
+    if (i != parseInt(quizButtons[parseInt])) {
+        pressButton();
+    } 
+    random();
+    progress();
+    endGame();
+}
+
 start.addEventListener('click', inputStart);
