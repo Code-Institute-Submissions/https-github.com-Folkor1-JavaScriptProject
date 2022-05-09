@@ -183,3 +183,49 @@ input:-webkit-autofill:active {
     font-family: Yanone Kaffeesatz, sans-serif;
     color: #01090f;
 }
+
+/* leaderboard page */
+
+#leaderboard-div {
+    margin: 100px auto 20px auto;
+    width: 500px;
+    height: 600px;
+    border: 1px solid #cfd6db;
+    border-radius: 4px;
+    background-color: #031825a6;
+}
+
+#name-heading {
+    margin: 10px 0 0 10px;
+    font-family: Yanone Kaffeesatz, sans-serif;
+    font-size: 60px;
+    color: #cfd6db;
+    float: left;
+    border-bottom: 1px solid #cfd6db;
+}
+
+#score-heading {
+    margin: 10px 10px 0 0;
+    font-family: Yanone Kaffeesatz, sans-serif;
+    font-size: 60px;
+    color: #cfd6db;
+    float: right;
+    border-bottom: 1px solid #cfd6db;
+}
+
+#name-span {
+    clear: both;
+    float: left;
+    margin: 30px 0 0 10px;
+    font-family: inherit;
+    font-size: 50px;
+    color: #cfd6db;
+}
+
+#score-span {
+    float: right;
+    margin: 30px 10px 0 0;
+    font-family: inherit;
+    font-size: 50px;
+    color: #cfd6db;
+}
