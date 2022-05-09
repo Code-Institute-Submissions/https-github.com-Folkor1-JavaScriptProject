@@ -1,3 +1,8 @@
+let button1 = document.getElementById("button1");
+let button2 = document.getElementById("button2");
+let button3 = document.getElementById("button3");
+let button4 = document.getElementById("button4");
+let scoreBar = document.getElementsByTagName("span");
 let progressBar = document.getElementById("progress-span");
 let quizButtons = document.getElementsByClassName("quiz-but");
 let quizQuestion = document.getElementById("question-div");
@@ -197,6 +202,35 @@ function progress() {
     progressBar.innerText = ++progress;
 }
 
+/* increments the score if correct answer is clicked */
+
+button1.onclick = function() {
+    if (correctAnswers.includes(button1.innerText)) {
+        let score = parseInt(scoreBar[0].innerText);
+        scoreBar[0].innerText = 10+score;
+    }
+}
+
+button2.onclick = function() {
+    if (correctAnswers.includes(button2.innerText)) {
+        let score = parseInt(scoreBar[0].innerText);
+        scoreBar[0].innerText = 10+score;
+    }
+}
+
+button3.onclick = function() {
+    if (correctAnswers.includes(button3.innerText)) {
+        let score = parseInt(scoreBar[0].innerText);
+        scoreBar[0].innerText = 10+score;
+    }
+}
+
+button4.onclick = function() {
+    if (correctAnswers.includes(button4.innerText)) {
+        let score = parseInt(scoreBar[0].innerText);
+        scoreBar[0].innerText = 10+score;
+    }
+}
 
 for (let i = 0; i < 4; i++) {
     quizButtons[i].addEventListener('click', change);
