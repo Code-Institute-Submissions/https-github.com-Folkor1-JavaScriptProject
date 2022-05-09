@@ -37,7 +37,7 @@ let questions =
     "What is the capital of Maldives?",
     "What is the capital of Slovakia?",
     "What is the capital of Bhutan?",
-    ]
+    ];
 
 let correctAnswers = [
     "Kathmandu",
@@ -55,7 +55,7 @@ let correctAnswers = [
     "Male",
     "Bratislava",
     "Thimphu",
-]
+];
 
 let incorrectAnswers = [
     "Riga",
@@ -88,7 +88,7 @@ let incorrectAnswers = [
     "Kampala",
     "Kharkiv",
     "Kuwait"
-]
+];
 
 let inputV = [];
 
@@ -117,7 +117,7 @@ okButton.onclick = function() {
     input.style.display = "initial";
     start.style.display = "initial";
     nameHeading.style.display = "block";
-}
+};
 
 /* gets random question and correct answer, then calls other function for incorrect answers */
 
@@ -216,28 +216,28 @@ button1.onclick = function() {
         let score = parseInt(scoreBar[0].innerText);
         scoreBar[0].innerText = 10+score;
     }
-}
+};
 
 button2.onclick = function() {
     if (correctAnswers.includes(button2.innerText)) {
         let score = parseInt(scoreBar[0].innerText);
         scoreBar[0].innerText = 10+score;
     }
-}
+};
 
 button3.onclick = function() {
     if (correctAnswers.includes(button3.innerText)) {
         let score = parseInt(scoreBar[0].innerText);
         scoreBar[0].innerText = 10+score;
     }
-}
+};
 
 button4.onclick = function() {
     if (correctAnswers.includes(button4.innerText)) {
         let score = parseInt(scoreBar[0].innerText);
         scoreBar[0].innerText = 10+score;
     }
-}
+};
 
 /* gets end game screen */
 
@@ -260,7 +260,7 @@ leaderBoardButton.onclick = function() {
     resultsButtons.style.display = "none";
     leaderBoardName.innerText = inputV[0];
     leaderBoardScore.innerText = gameScore.innerText;
-}
+};
 
 for (let i = 0; i < 4; i++) {
     quizButtons[i].addEventListener('click', change);
