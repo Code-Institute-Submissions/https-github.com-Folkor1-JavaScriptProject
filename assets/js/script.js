@@ -1,8 +1,11 @@
+let okButton = document.getElementById("ok-div");
 let errorMessage = document.getElementById("error-message-div");
 let nameHeading = document.getElementById("name-div");
 let input = document.getElementById("name-input");
 let start = document.getElementById("start-button");
 let quizGame = document.getElementById("quiz-div");
+
+/* validates the input field and starts the quiz*/
 
 function inputStart() {
     if (input.value.match(/^[0-9A-Za-z]+$/) !== null) {
@@ -17,9 +20,19 @@ function inputStart() {
         errorMessage.style.display = "block";
     }
 }
+
+/* removes error message */
+
+okButton.onclick = function() {
+    errorMessage.style.display = "none";
+    input.style.display = "initial";
+    start.style.display = "initial";
+    nameHeading.style.display = "block";
+}
+
 let questions = 
     [
-    "a Question",
+    "a Question test long question 12334 Question test",
     "b Question",
     "c Question",
     "d Question",
