@@ -189,4 +189,10 @@ function pressButton() {
         quizButtons[Math.floor(Math.random() * 4)].innerText = correctAnswers[i];
 }
 
+/* */
+
+
+for (let i = 0; i < 4; i++) {
+    quizButtons[i].addEventListener('click', change);
+    }
 start.addEventListener('click', inputStart);
