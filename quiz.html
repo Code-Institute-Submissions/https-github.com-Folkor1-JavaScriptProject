@@ -40,23 +40,23 @@
     </div>
 
     <!-- results screen -->
-<div><br><span></span></div>
-<div>
-    <button></button>
+<div id="results-heading" style="display:none">Well Done!<br>Your Score: <span id=game-score></span></div>
+<div class="buttons-div" id="results-buttons" style="display:none">
+    <button class="main-nav" id="leaderboard-button">Leaderboard</button>
     <br>
-    <button></button>
+    <button onclick = "window.location.href='index.html'" class="main-nav">Home</button>
 </div>
 
 <!-- leaderboard screen -->
-<div>
-    <div>
-        <h2></h2>
-        <h2></h2>
-        <span>placeholder</span>
-        <span>0</span>
+<div id="leaderboard-wrap" style="display:none">
+    <div id="leaderboard-div">
+        <h2 id="name-heading">Name</h2>
+        <h2 id="score-heading">Score</h2>
+        <span id="name-span">placeholder</span>
+        <span id="score-span">0</span>
     </div>
-    <div>
-    <button></button>
+    <div class="buttons-div">
+    <button onclick = "window.location.href='index.html'" class="main-nav">Home</button>
 </div>
 </div>
 
