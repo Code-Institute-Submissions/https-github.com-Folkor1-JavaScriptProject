@@ -182,4 +182,11 @@ function random() {
     endGame();
 }
 
+/* gets the correct answer(random allocation) */
+
+function pressButton() {
+    let i = parseInt(progressBar.innerText);
+        quizButtons[Math.floor(Math.random() * 4)].innerText = correctAnswers[i];
+}
+
 start.addEventListener('click', inputStart);
