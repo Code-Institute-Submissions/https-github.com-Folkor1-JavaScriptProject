@@ -125,4 +125,45 @@ function getIncorrectAnswers() {
     }      
 }
 
+/* makes incorrect answers non-repeatable */
+
+function random() {
+    while (quizButtons[0].innerText === quizButtons[1].innerText) {
+     quizButtons[0].innerText = incorrectAnswers[Math.floor(Math.random() * incorrectAnswers.length)];
+       if (quizButtons[0].innerText !== quizButtons[1].innerText) {
+           break;
+       }
+    }
+    while (quizButtons[0].innerText === quizButtons[2].innerText) {
+     quizButtons[0].innerText = incorrectAnswers[Math.floor(Math.random() * incorrectAnswers.length)];
+       if (quizButtons[0].innerText !== quizButtons[2].innerText) {
+         break;
+     }
+    }
+    while (quizButtons[0].innerText === quizButtons[3].innerText) {
+     quizButtons[0].innerText = incorrectAnswers[Math.floor(Math.random() * incorrectAnswers.length)];
+       if (quizButtons[0].innerText !== quizButtons[3].innerText) {
+         break;
+     }
+    }
+    while (quizButtons[1].innerText === quizButtons[2].innerText) {
+     quizButtons[1].innerText = incorrectAnswers[Math.floor(Math.random() * incorrectAnswers.length)];
+     if (quizButtons[1].innerText !== quizButtons[2].innerText) {
+         break;
+     }
+    }
+    while (quizButtons[1].innerText === quizButtons[3].innerText) {
+     quizButtons[1].innerText = incorrectAnswers[Math.floor(Math.random() * incorrectAnswers.length)];
+     if (quizButtons[1].innerText !== quizButtons[3].innerText) {
+         break;
+     }
+    }
+    while (quizButtons[2].innerText === quizButtons[3].innerText) {
+     quizButtons[2].innerText = incorrectAnswers[Math.floor(Math.random() * incorrectAnswers.length)];
+     if (quizButtons[2].innerText !== quizButtons[3].innerText) {
+         break;
+     }
+    }
+ }
+
 start.addEventListener('click', inputStart);
