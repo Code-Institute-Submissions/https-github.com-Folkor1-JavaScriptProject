@@ -1,3 +1,4 @@
+let errorMessage = document.getElementById("error-message-div");
 let nameHeading = document.getElementById("name-div");
 let input = document.getElementById("name-input");
 let start = document.getElementById("start-button");
@@ -10,7 +11,10 @@ function inputStart() {
         nameHeading.style.display = "none";
         quizGame.style.display = "block";
     } else {
-        alert("test");
+        input.style.display = "none";
+        start.style.display = "none";
+        nameHeading.style.display = "none";
+        errorMessage.style.display = "block";
     }
 }
 start.addEventListener('click', inputStart);
