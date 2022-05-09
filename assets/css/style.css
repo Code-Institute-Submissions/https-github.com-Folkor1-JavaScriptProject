@@ -256,3 +256,43 @@ input:-webkit-autofill:active {
         font-size: 100px;
     }
 }
+
+/* For medium to small screens size from 900px wide and down */
+@media screen and (max-width: 900px) {
+    #quiz-heading {
+        font-size: 40px;
+    }
+
+    #error-message-div {
+        width: 450px;
+        height: 170px;
+        font-size: 40px;
+    }
+
+    #rules-tab {
+        width: 500px;
+        height: 500px;
+        font-size: 45px;
+    }
+
+    h1 {
+        font-size: 60px
+    }
+
+    #question-div {
+        margin: 50px 0 50px 0;
+        font-size: 75px;
+    }
+
+    #score-div {
+        text-align: center;
+        float: none;
+        font-size: 60px;
+    }
+
+    #progress-div {
+        float: none;
+        text-align: center;
+        font-size: 60px;
+    }
+}
