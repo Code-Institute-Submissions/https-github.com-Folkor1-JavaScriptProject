@@ -1,3 +1,5 @@
+let resultsHeading = document.getElementById("results-heading");
+let resultsButtons = document.getElementById("results-buttons");
 let button1 = document.getElementById("button1");
 let button2 = document.getElementById("button2");
 let button3 = document.getElementById("button3");
@@ -229,6 +231,18 @@ button4.onclick = function() {
     if (correctAnswers.includes(button4.innerText)) {
         let score = parseInt(scoreBar[0].innerText);
         scoreBar[0].innerText = 10+score;
+    }
+}
+
+/* gets end game screen */
+
+function endGame() {
+    let i = parseInt(progressBar.innerText);
+    if (i >= 16) {
+        quizGame.style.display = "none";
+        resultsHeading.style.display = "block";
+        resultsButtons.style.display = "block";
+        gameScore.innerText = parseInt(scoreBar[0].innerText);
     }
 }
 
