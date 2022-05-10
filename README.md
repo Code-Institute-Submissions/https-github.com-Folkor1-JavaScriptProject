@@ -1,108 +1,142 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Geography quiz
 
-Welcome Folkor1,
+An interactive quiz that tests user's knowledge of countries and their capital cities. Contain 15 questions and randomly generated answers, with one correct answer respectively.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Leaderboard with username and score is available by the end of quiz.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+<a href="https://folkor1.github.io/JavaScriptProject/quiz.html" target="_blank">Geography quiz website link</a>
 
-## Gitpod Reminders
+![Mockup screenshot](assets/docs/Preview.PNG)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Features
 
-`python3 -m http.server`
+The website is designed so the new quizes and complexity levels can be added and perfectly fit into the website's design.
 
-A blue button should appear to click: _Make Public_,
+### Existing features
 
-Another blue button should appear to click: _Open Browser_.
+- __Navigation Menu__
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+  - The navigation menu consists of two options: start a new game and preview the rules.
 
-A blue button should appear to click: _Make Public_,
+     ![navigation](assets/docs/main.PNG)
 
-Another blue button should appear to click: _Open Browser_.
+- __Rules__
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+   - Rules page with general terms of the quiz.
 
-To log into the Heroku toolbelt CLI:
+   ![rules](assets/docs/rules.PNG)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- __New Game__
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+   - Brings the user to name input screen.
 
-------
+ - __Name Input__
 
-## Release History
+    - Allows to enter user's name in Alphanumeric format that will be visible on the leaderboard by the end of quiz.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    ![nameInput](assets/docs/nameInput.PNG)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- __Invalidation Message__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+   - Invalidation message pops up if the name entered is not in Alphanumeric format.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+   ![errorMessage](assets/docs/error.PNG)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- __Quiz Game__
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+   - Quiz game that consists of 15 questions.
+   - Score bar that increments by 10 with every correct answer chosen.
+   - Randomly generated answers where the correct answer always displayed.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+   ![quizGame](assets/docs/game.PNG)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- __Endgame Menu__
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+   - Allows the user to preview Leaderboard or return to the main page.
+   - Allows the user to see the final score.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+   ![endGame](assets/docs/score.PNG)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- __Leaderboard__
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  - Shows the username and score.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  ![leaderboard](assets/docs/leaderboard.PNG)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  ### Features to implement
 
-------
+   - Randomization of the quiz questions.
+   - Make wrong answers non-repeatable.
+   - Multiple entries to the leaderboard.
+   - Use of Enter key to submit input on the name input page.
+   - Highlight a button with green color when the correct answer is picked, and with red when incorrect answer is picked respectively.
+   - Small timeout before changing the question once an answer was picked.
 
-## FAQ about the uptime script
+## Testing
 
-**Why have you added this script?**
+Testing was performed on all stages of the project, with the final one after deployment.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+  - Tested all navigation buttons to make sure they are leading to the correct directories and there are no broken ones.
 
-**How will this affect me?**
+  - All quiz question were tested to make sure there is always correct answer showing.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+  - Tested the maximum and 0 score to make sure there are no errors.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+  - Tested long user name to ensure that it fits into the leaderboard without overflow.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+  - Tested scaling from 1600px to 320px screens to make sure there are no overflows.
 
-**So….?**
+Bugs identified during the testing:
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+  - Input page elements appeared to be misaligned after pressing 'OK' on the error message window.
+    
+    - Fixed by changing the display type from 'block' to 'initial' in the function that calls these elements.
 
-**Can I opt out?**
+  - Two similar incorrect answers in a single questions round.
+   
+    - Fixed by adding a function that loopes through the incorrect answers list until it finds a unique one.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+  - Only incorrect answers were pulled to all four options.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+    - Identified an issue in the function and fixed.
 
-**Anything more?**
+  - Long user's name was overflowing the score on the leaderboard when using smaller screen.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+    - Fixed by adding a word-wrap property.
 
----
+## Validator testing
 
-Happy coding!
+ - HTML
+    - No errors identified in <a href="https://validator.w3.org/" target="_blank">W3C HTML validator</a>
+
+- CSS
+   - No errors identified in <a href="https://jigsaw.w3.org/css-validator/#validate_by_uri" target="_blank">W3C CSS validator</a>
+
+- JavaScript
+   - No errors identified in <a href="https://beautifytools.com/javascript-validator.php" target="_blank">BeautifyTools</a>
+
+## Deployment
+
+The project was deployed to GitHub by following these steps:
+
+ 1. Login to GitHub
+ 2. Select the repository
+ 3. Navigate to 'Settings' -> 'Pages'
+ 4. In the 'Source' drop-down menu select 'main'
+ 5. Press 'Save'
+ 6. The link becomes available straight away and the project loads once the building process is finished
+
+ ## Credits
+
+ Background image was taken from <a href="https://pixabay.com/" target="_blank">Pixabay</a>
+
+ The icons were taken from <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>
+
+ Font was taken from <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
+
+ The following resources were used for solutions and ideas:
+
+ - <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+
+ - <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
