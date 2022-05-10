@@ -105,6 +105,10 @@ Bugs identified during the testing:
 
     - Fixed by adding a word-wrap property.
 
+Lighthouse results:
+
+   ![lighthouse](assets/docs/lighthouse.PNG)
+
 ## Validator testing
 
  - HTML
@@ -115,6 +119,8 @@ Bugs identified during the testing:
 
 - JavaScript
    - No errors identified in <a href="https://beautifytools.com/javascript-validator.php" target="_blank">BeautifyTools</a>
+
+   - No errors identified in <a href="https://jshint.com/" target="_blank">JSHint</a>
 
 ## Deployment
 
