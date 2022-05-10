@@ -1,10 +1,7 @@
-let leaderBoard = document.getElementById("leaderboard-wrap");
 let leaderBoardScore = document.getElementById("score-span");
 let leaderBoardButton = document.getElementById("leaderboard-button");
 let leaderBoardName = document.getElementById("name-span");
 let gameScore = document.getElementById("game-score");
-let resultsHeading = document.getElementById("results-heading");
-let resultsButtons = document.getElementById("results-buttons");
 let button1 = document.getElementById("button1");
 let button2 = document.getElementById("button2");
 let button3 = document.getElementById("button3");
@@ -13,81 +10,69 @@ let scoreBar = document.getElementsByTagName("span");
 let progressBar = document.getElementById("progress-span");
 let quizButtons = document.getElementsByClassName("quiz-but");
 let quizQuestion = document.getElementById("question-div");
-let okButton = document.getElementById("ok-div");
-let errorMessage = document.getElementById("error-message-div");
+let quizGame = document.getElementById("quiz-div");
 let nameHeading = document.getElementById("name-div");
+let resultsHeading = document.getElementById("results-heading");
+let resultsButtons = document.getElementById("results-buttons");
+let errorMessage = document.getElementById("error-message-div");
+let okButton = document.getElementById("ok-div");
+let leaderBoard = document.getElementById("leaderboard-wrap");
 let input = document.getElementById("name-input");
 let start = document.getElementById("start-button");
-let quizGame = document.getElementById("quiz-div");
 
 let questions = 
     [
-    "What is the capital of Nepal?",
-    "What is the capital of Ghana?",
-    "What is the capital of Bahrain?",
-    "What is the capital of Paraguay?",
-    "What is the capital of Panama?",
-    "What is the capital of Kyrgyzstan?",
-    "What is the capital of Montenegro?",
-    "What is the capital of Barbados",
-    "What is the capital of Kenya?",
-    "What is the capital of Equador?",
-    "What is the capital of Laos",
-    "What is the capital of Senegal?",
-    "What is the capital of Maldives?",
-    "What is the capital of Slovakia?",
-    "What is the capital of Bhutan?",
+    "a Question",
+    "b Question",
+    "c Question",
+    "d Question",
+    "e Question",
+    "f Question",
+    "g Question",
+    "h Question",
+    "i Question",
+    "j Question",
+    "k Question",
+    "l Question",
+    "n Question",
+    "o Question",
+    "p Question"
     ];
 
 let correctAnswers = [
-    "Kathmandu",
-    "Akkra",
-    "Manama",
-    "Asunción",
-    "Panama",
-    "Bishkek",
-    "Podgorica",
-    "Bridgetown",
-    "Nairobi",
-    "Quito",
-    "Vientiane",
-    "Dakar",
-    "Male",
-    "Bratislava",
-    "Thimphu",
+    "1 Correct",
+    "2 Correct",
+    "3 Correct",
+    "4 Correct",
+    "5 Correct",
+    "6 Correct",
+    "7 Correct",
+    "8 Correct",
+    "9 Correct",
+    "10 Correct",
+    "11 Correct",
+    "12 Correct",
+    "13 Correct",
+    "14 Correct",
+    "15 Correct",
 ];
 
 let incorrectAnswers = [
-    "Riga",
-    "Bangkok",
-    "Kingstown",
-    "Beijing",
-    "Doha",
-    "Pretoria",
-    "Kolombo",
-    "Mumbai",
-    "Zagreb",
-    "Kabul",
-    "Islamabad",
-    "New-Delhi",
-    "Manila",
-    "Cairo",
-    "Rabat",
-    "Montevideo",
-    "Riyadh",
-    "Nicosia",
-    "Athens",
-    "Sophia",
-    "Tashkent",
-    "Almaty",
-    "Karachi",
-    "Lagos",
-    "Caracas",
-    "Guadalajara",
-    "Havana",
-    "Kampala",
-    "Kharkiv",
-    "Kuwait"
+    "1 Incorrect",
+    "2 Incorrect",
+    "3 Incorrect",
+    "4 Incorrect",
+    "5 Incorrect",
+    "6 Incorrect",
+    "7 Incorrect",
+    "8 Incorrect",
+    "9 Incorrect",
+    "10 Incorrect",
+    "11 Incorrect",
+    "12 Incorrect",
+    "13 Incorrect",
+    "14 Incorrect",
+    "15 Incorrect"
 ];
 
 let inputV = [];
@@ -107,17 +92,18 @@ function inputStart() {
         start.style.display = "none";
         nameHeading.style.display = "none";
         errorMessage.style.display = "block";
+        okButton.addEventListener('click', err);
     }
 }
 
 /* removes error message */
 
-okButton.onclick = function() {
+function err() {
     errorMessage.style.display = "none";
     input.style.display = "initial";
     start.style.display = "initial";
     nameHeading.style.display = "block";
-};
+}
 
 /* gets random question and correct answer, then calls other function for incorrect answers */
 
@@ -135,7 +121,10 @@ function getIncorrectAnswers() {
             quizButtons[i].innerText = incorrectAnswers[Math.floor(Math.random() * incorrectAnswers.length)];
         }
         random();
-    }      
+    }
+    for (let i = 0; i < 4; i++) {
+        quizButtons[i].addEventListener('click', change);
+        } 
 }
 
 /* makes incorrect answers non-repeatable */
@@ -179,9 +168,9 @@ function random() {
     }
  }
 
- /* gets new question(ordered) and answers(random allocation) */
+/* gets new question(ordered) and answers(random allocation) */
 
- function change() {
+function change() {
     let i = +parseInt(progressBar.innerText);
     quizQuestion.innerText = questions[i];
     for (let y = 0; y < 4; y++) {
@@ -193,13 +182,10 @@ function random() {
     random();
     progress();
     endGame();
-}
-
-/* gets the correct answer(random allocation) */
-
-function pressButton() {
-    let i = parseInt(progressBar.innerText);
-        quizButtons[Math.floor(Math.random() * 4)].innerText = correctAnswers[i];
+    incScore1();
+    incScore2();
+    incScore3();
+    incScore4();
 }
 
 /* increments progress */
@@ -209,35 +195,42 @@ function progress() {
     progressBar.innerText = ++progress;
 }
 
+/* gets the correct answer(random allocation) */
+
+function pressButton() {
+    let i = parseInt(progressBar.innerText);
+        quizButtons[Math.floor(Math.random() * 4)].innerText = correctAnswers[i];
+}
+
 /* increments the score if correct answer is clicked */
 
-button1.onclick = function() {
+function incScore1() {
     if (correctAnswers.includes(button1.innerText)) {
         let score = parseInt(scoreBar[0].innerText);
         scoreBar[0].innerText = 10+score;
     }
-};
+}
 
-button2.onclick = function() {
+function incScore2() {
     if (correctAnswers.includes(button2.innerText)) {
         let score = parseInt(scoreBar[0].innerText);
         scoreBar[0].innerText = 10+score;
     }
-};
+}
 
-button3.onclick = function() {
+function incScore3() {
     if (correctAnswers.includes(button3.innerText)) {
         let score = parseInt(scoreBar[0].innerText);
         scoreBar[0].innerText = 10+score;
     }
-};
+}
 
-button4.onclick = function() {
+function incScore4() {
     if (correctAnswers.includes(button4.innerText)) {
         let score = parseInt(scoreBar[0].innerText);
         scoreBar[0].innerText = 10+score;
     }
-};
+}
 
 /* gets end game screen */
 
@@ -249,20 +242,16 @@ function endGame() {
         resultsButtons.style.display = "block";
         gameScore.innerText = parseInt(scoreBar[0].innerText);
     }
+    leaderBoardButton.addEventListener('click', leaderScreen);
 }
 
 /* gets leaderboard screen */
 
-leaderBoardButton.onclick = function() {
+function leaderScreen() {
 
     leaderBoard.style.display = "block";
     resultsHeading.style.display = "none";
     resultsButtons.style.display = "none";
     leaderBoardName.innerText = inputV[0];
     leaderBoardScore.innerText = gameScore.innerText;
-};
-
-for (let i = 0; i < 4; i++) {
-    quizButtons[i].addEventListener('click', change);
-    }
-start.addEventListener('click', inputStart);
+}
