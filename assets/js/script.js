@@ -193,14 +193,10 @@ function change() {
         }
     if (i != parseInt(quizButtons[parseInt])) {
         pressButton();
-    } 
+    }
     random();
     progress();
     endGame();
-    incScore1();
-    incScore2();
-    incScore3();
-    incScore4();
 }
 
 /* increments progress */
